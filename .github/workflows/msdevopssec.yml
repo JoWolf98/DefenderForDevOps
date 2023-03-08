@@ -13,10 +13,19 @@ name: MSDO windows-latest
         # macos-latest supporting coming soon
         runs-on: windows-latest
 
-        steps:
-        - uses: actions/checkout@v3
+       steps:
+        - uses: actions/checkout@v2
+        - uses: azure/login@v1
+          with:
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
+        - uses: azure/arm-deploy@v1
+          with:
+            resourceGroupName: dev-yaml-multi1
+            template: ./azure.json
+            parameters: ./azure.param.json
+            deploymentMode: Incremental
 
-        - uses: actions/setup-dotnet@v3
+        - uses: actions/setup-dotnet@v1
           with:
             dotnet-version: |
               5.0.x
