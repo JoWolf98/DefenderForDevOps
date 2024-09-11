@@ -22,6 +22,12 @@
       "metadata": {
         "description": "Password for ethe Virt.ual Machine."
       }
+    "key1": {
+      "type": "storageAccountKey",
+      "defaultValue": "F7QebeRutA2E+EHvloUcds7q48pDibOKA76yfwPCc6TxVNSJE6utmSdgrQRsZ2MsqOYFuapLopX++AStfW0ajg=="
+      "metadata": {
+        "description": "Password for ethe Virt.ual Machine."
+      }
     },
     "dnsLabelPrefix": {
       "type": "string",
