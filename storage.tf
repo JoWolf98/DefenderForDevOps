@@ -11,6 +11,6 @@ resource "azurerm_storage_account" "example" {
   account_replication_type = "GRS"
 
   tags = {
-    environment = "staging"
+    environment = "staging1"
   }
 }
