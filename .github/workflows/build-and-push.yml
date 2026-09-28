@@ -23,5 +23,10 @@ jobs:
       
       - name: Build and push image
         run: |
-          docker build -t acrforcontainerdemo.azurecr.io/defender-container-test:${{ github.sha }} ./defender-container-test
+          docker build \
+            --build-arg GIT_COMMIT=${{ github.sha }} \
+            -t acrforcontainerdemo.azurecr.io/defender-container-test:${{ github.sha }} \
+            -t acrforcontainerdemo.azurecr.io/defender-container-test:latest \
+            ./defender-container-test
           docker push acrforcontainerdemo.azurecr.io/defender-container-test:${{ github.sha }}
+          docker push acrforcontainerdemo.azurecr.io/defender-container-test:latest
